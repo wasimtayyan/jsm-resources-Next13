@@ -29,7 +29,7 @@ const page = async ({ params }: Props) => {
                         <li>useful tips & tricks</li>
                     </ul>
                     <p className='text-lg'>...this eBook is a must-have for any web devloper</p>
-                    <Link className='py-6' href={resource?.downloadLink} >
+                    <Link className='py-6' href={resource?.downloadLink} target='_blank' >
                         <button className='gradient_blue-purple whitespace-nowrap rounded-lg px-8 py-2.5 capitalize '>
                             Download the Guide
                         </button>
