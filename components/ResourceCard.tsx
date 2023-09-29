@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
+import Client from "./Client-link"
 
 
 interface Props {
@@ -19,7 +20,10 @@ interface Props {
 const ResourceCard = ({ title, id, image, downloadLink, downloadNumber }: Props) => {
     return (
         <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[356px]">
-            <Link href={`/resources/${id}`}>
+            <Client
+                downloadNumber={downloadNumber}
+                id={id}>
+
                 <CardHeader className="flex-center flex-col gap-2.5 !p-0">
                     <div className="h-fit w-full">
                         <Image
@@ -33,19 +37,20 @@ const ResourceCard = ({ title, id, image, downloadLink, downloadNumber }: Props)
                     <CardTitle className="text-white pargraph-semibold line-clamp-1 w-full text-left">{title}</CardTitle>
 
                 </CardHeader>
-
-            </Link>
+            </Client>
             <CardContent className="flex-between mt-4 p-0">
                 <div className="flex-center body-medium gap-1.5 text-white">
                     <Image src='/downloads.svg' alt="download" height={20} width={20} />
                     {downloadNumber}
                 </div>
-                <Link
-                    className="flex-center gap-1.5 text-gradient_purple-blue body-semibold"
-                    href={downloadLink}>
-                    Download Now
-                    <Image src='/arrow-blue.svg' alt="arrow" height={10} width={13} />
-                </Link>
+                <Client
+                    id={id}
+                    downloadNumber={downloadNumber}
+                >
+                    <Image
+                        className="text-gradient_purple-blue"
+                        src='/arrow-blue.svg' alt="arrow" height={20} width={20} />
+                </Client>
             </CardContent>
         </Card>
 

@@ -25,6 +25,9 @@ module.exports = {
       },
     },
     extend: {
+      rotate: {
+        "12": "12deg",
+      },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         inter: ["Inter", "sans-serif"],

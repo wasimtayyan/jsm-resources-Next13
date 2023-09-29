@@ -9,7 +9,7 @@ interface Props {
     searchParams: { [key: string]: string | undefined }
 }
 
-export const revalidate = 900;
+export const revalidate = 500;
 const page = async ({ searchParams }: Props) => {
 
     const resuorces = await getResources({
