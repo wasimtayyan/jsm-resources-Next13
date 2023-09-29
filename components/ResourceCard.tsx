@@ -42,7 +42,7 @@ const ResourceCard = ({ title, id, image, downloadLink, downloadNumber }: Props)
                 </div>
                 <Link
                     className="flex-center gap-1.5 text-gradient_purple-blue body-semibold"
-                    href={`/resources/${id}`}>
+                    href={downloadLink}>
                     Download Now
                     <Image src='/arrow-blue.svg' alt="arrow" height={10} width={13} />
                 </Link>
